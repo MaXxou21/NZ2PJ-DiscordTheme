@@ -1,0 +1,133 @@
+/**
+ * @name NZ2PJ-Theme_by_MaXxou_FX
+ * @version 4.0
+ * @description My custom Nuketown Zombies 2 theme for Discord
+ * @author MaXxou_Dynasty - @maxifull on YT
+ *
+ * @website http://mathysdev.fr
+ * @source 
+ * @donate https://www.patreon.com/cw/Maxifull
+ * @invite 
+ */
+
+@import url('https://maxxou21.github.io/NZ2PJ-DiscordTheme/css/nz2pj-content.css');
+
+
+/* ============================================================
+1. TOKENS
+============================================================ */
+:root {
+  /* --- Marque --- */
+  --nf-accent: #9688ff;
+  --nf-accent-2: #3259e1;
+  --nf-accent-3: #fbbbff;
+  --nf-gradient: linear-gradient(90deg, #3259e1 0%, #9688ff 63%, #fbbbff 100%);
+  --nf-gradient-soft: linear-gradient(90deg, rgb(50 89 225 / .18) 0%, rgb(150 136 255 / .10) 63%, transparent 100%);
+
+  /* --- Neutres (teinte légèrement violette) --- */
+  --nf-950: #0b0b10;
+  --nf-900: #111116;
+  --nf-850: #15151c;
+  --nf-800: #1b1b24;
+  --nf-700: #25252f;
+  --nf-600: #34343f;
+  --nf-400: #9a9aac;
+  --nf-200: #d4d4de;
+  --nf-50: #f5f5fa;
+
+  /* --- Statuts --- */
+  --nf-online: #4ade80;
+  --nf-idle: #fbbf24;
+  --nf-dnd: #f87171;
+
+  /* --- Forme & mouvement --- */
+  --nf-radius-none: 0px;
+  --nf-radius-3xs: 5px;
+  --nf-radius-2xs: 8px;
+  --nf-radius-xs: 12px;
+  --nf-radius-sm: 16px;
+  --nf-radius-md: 22px;
+  --nf-radius-lg: 25px;
+  --nf-radius-xl: 28px;
+  --nf-gap: 12px;
+  --nf-border: 1px solid rgb(255 255 255 / .06);
+  --nf-ring: 0 0 0 2px rgb(150 136 255 / .45);
+  --nf-shadow: 0 10px 30px -10px rgb(0 0 0 / .6);
+  --nf-ease: 150ms cubic-bezier(.4, 0, .2, 1);
+
+  /* --- Images perso (décommente si tu veux) --- */
+  /* --nf-logo: url("https://mathysdev.fr/public/images/discord_theme/logo-black.png"); */
+  /* --nf-banner: url("https://mathysdev.fr/public/images/discord_theme/banner.png"); */
+}
+
+
+/* ============================================================
+2. VARIABLES DISCORD (repeintes via les tokens)
+============================================================ */
+.theme-dark,
+.theme-darker,
+.theme-midnight {
+  /* Fonds */
+  --background-base-lowest: var(--nf-950);
+  --background-base-lower: var(--nf-900);
+  --background-base-low: var(--nf-850);
+  --background-surface-high: var(--nf-800);
+  --background-surface-higher: var(--nf-700);
+  --background-surface-highest: var(--nf-600);
+  --chat-background-default: var(--nf-850);
+
+  /* Anciens noms (filet de sécurité) */
+  --background-primary: var(--nf-850);
+  --background-secondary: var(--nf-900);
+  --background-secondary-alt: var(--nf-950);
+  --background-tertiary: var(--nf-950);
+  --bg-mod-faint: var(--nf-850);
+  --bg-surface-raised: var(--nf-800);
+  --channeltextarea-background: var(--nf-900);
+
+  /* Survols / sélections */
+  --background-modifier-hover: rgb(255 255 255 / .04);
+  --background-modifier-selected: rgb(150 136 255 / .14);
+  --background-mod-subtle: rgb(255 255 255 / .04);
+  --background-mod-normal: rgb(255 255 255 / .07);
+  --background-mod-strong: rgb(255 255 255 / .10);
+
+  /* Messages mentionnés */
+  --background-mentioned: linear-gradient(90deg, rgb(150 136 255 / .16), transparent);
+  --background-mentioned-hover: linear-gradient(90deg, rgb(150 136 255 / .24), transparent);
+
+  /* Texte */
+  --text-default: var(--nf-200);
+  --text-strong: var(--nf-50);
+  --text-muted: var(--nf-400);
+  --text-link: var(--nf-accent);
+  --text-brand: var(--nf-accent);
+
+  /* Marque / accent */
+  --brand-500: var(--nf-accent);
+  --brand-360: var(--nf-accent);
+  --bg-brand: var(--nf-accent-2);
+  --control-brand-foreground: var(--nf-accent);
+  --control-brand-foreground-new: var(--nf-gradient);
+  --control-primary-background-default: var(--nf-accent-2);
+  --control-primary-background-hover: var(--nf-accent);
+  --radio-background-selected-default: var(--nf-accent);
+  --radio-background-selected-hover: var(--nf-accent-2);
+  --interactive-text-active: var(--nf-accent);
+  --background-feedback-info: rgb(50 89 225 / .15);
+  --icon-feedback-info: var(--nf-accent);
+
+  /* Bordures */
+  --border-subtle: rgb(255 255 255 / .05);
+  --border-normal: rgb(255 255 255 / .08);
+  --border-strong: rgb(255 255 255 / .14);
+
+  /* Scrollbars */
+  --scrollbar-thin-thumb: var(--nf-accent);
+  --scrollbar-auto-thumb: var(--nf-accent);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-track: transparent;
+}
+
+
+
