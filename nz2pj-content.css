@@ -1,0 +1,1043 @@
+/* ============================================================
+3. GÉNÉRAL
+============================================================ */
+
+/* ==================== App Logo ==================== */
+[class*="tutorialContainer_"] {
+  margin-top: 10px;
+}
+.childWrapper__6e9f8 {
+    background-image: url('https://mathysdev.fr/public/images/discord_theme/logo-black.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8 {
+    background-color: unset;
+}
+/* don't show the default Discord logo */
+.childWrapper__6e9f8 svg {
+    display: none;
+}
+/* PM items */
+[class*="link_"] {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+/* item container */
+[class*="channel_"] {
+    border-radius: 20px;
+    margin-bottom: 8px;
+    margin-left: 12px;
+    transition: all 0.2s;
+}
+/* Animation */
+[class*="channel_"]:hover {
+    margin-left: 6px;
+}
+
+
+/* ==================== Texts ==================== */
+[class*="markup_"] {
+    font-size: 1.1rem;
+}
+[class*="username_"] {
+    font-size: 1.2rem;
+}
+[class*="cozy_"], [class*="header_"] {
+    line-height: 2rem;
+}
+
+
+
+
+body {
+  font-family: "gg sans", ui-sans-serif, system-ui, sans-serif;
+  background: var(--nf-950);
+  color: var(--nf-200);
+}
+
+::selection {
+  background: rgb(150 136 255 / .35);
+  color: var(--nf-50);
+}
+
+a { color: var(--nf-accent); }
+
+/* Lignes de séparation plus discrètes */
+[class*="seperator_"],
+[class*="separator_"],
+[class*="divider_"] {
+  background: rgb(255 255 255 / .05) !important;
+  height: 1px !important;
+}
+
+/* Curseurs & focus : anneau violet cohérent */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: var(--nf-ring);
+  border-radius: var(--nf-radius-sm);
+}
+
+/* Barre de chargement (téléchargement des messages) */
+[class*="progress_"] {
+  background: var(--nf-gradient) !important;
+}
+
+/* ============================================================
+4. BOUTONS DE FENÊTRE (style « feux » macOS)
+============================================================ */
+[class*="winButtonClose_"],
+[class*="winButtonMinMax_"] { position: relative; }
+
+[class*="winButtonClose_"] svg,
+[class*="winButtonMinMax_"] svg { display: none; }
+
+[class*="winButtonClose_"]:hover,
+[class*="winButtonMinMax_"]:hover { background: none; color: inherit; }
+
+[class*="winButtonClose_"]::after,
+[class*="winButtonMinMax_"]::after {
+  content: "";
+  position: absolute; inset: 0; margin: auto;
+  width: 12px; height: 12px; border-radius: 50%;
+  transition: transform var(--nf-ease), filter var(--nf-ease);
+}
+[class*="winButtonClose_"]::after { background: #ff5f56; }
+/* FR : Maximiser -> vert / EN : Maximize -> vert ; Minimiser / Minimize -> jaune */
+[class*="winButtonMinMax_"][aria-label*="aximi"]::after { background: #4cd964; }
+[class*="winButtonMinMax_"][aria-label*="inimi"]::after { background: #ffbd2e; }
+[class*="winButton"]:hover::after { transform: scale(1.15); filter: brightness(1.15); }
+
+
+/* ============================================================
+5. BARRE DE SERVEURS (tout à gauche)
+============================================================ */
+/* Conteneur */
+[class*="wrapper_"][class*="guilds_"] {
+  border-radius: var(--nf-radius-md) var(--nf-radius-md) 0 0;
+}
+[class*="guildList_"],
+[class*="side_"][class*="nav_"] {
+  background: var(--nf-950);
+  border-right: var(--nf-border);
+}
+
+/* Ico de serveur */
+[class*="guilds_"] > [class*="wrapper_"],
+[class*="sc-"] [class*="guild_"][class*="wrapper_"] {
+  border-radius: var(--nf-radius-lg);
+  transition: all var(--nf-ease);
+}
+
+[class*="guild_"] img[class*="icon_"] {
+  border-radius: var(--nf-radius-lg);
+  transition: border-radius var(--nf-ease);
+}
+
+/* Survvol : l'ico arrondit comme sur macOS/moderne */
+[class*="guild_"]:hover img[class*="icon_"] {
+  border-radius: var(--nf-radius-sm);
+}
+
+/* Badge de mention : violet */
+[class*="mention_"] {
+  background: var(--nf-accent) !important;
+}
+
+/* Boutons + et découverte */
+[class*="guild_"][class*="addServer_"],
+[class*="guild_"][class*="discoverServer_"] {
+  color: var(--nf-accent);
+}
+
+[class*="guild_"][class*="addServer_"]:hover,
+[class*="guild_"][class*="discoverServer_"]:hover {
+  background: rgb(150 136 255 / .12);
+}
+
+/* Point de sélection à gauche du serveur actif */
+[class*="guild_"][class*="active_"]::before {
+  background: var(--nf-accent);
+}
+
+
+/* ============================================================
+6. EN-TÊTE DE SERVEUR / CHAT
+============================================================ */
+[class*="header_"][class*="base_"],
+[class*="header_"][class*="default_"],
+[class*="header_"][class*="resizable_"] {
+  background: rgb(21 21 28 / .92);
+  backdrop-filter: blur(12px);
+  border-bottom: var(--nf-border);
+}
+
+/* Icône du nom de canal */
+[class*="header_"] [class*="link_"] {
+  color: var(--nf-50);
+  font-weight: 600;
+}
+
+[class*="header_"] [class*="link_"]:hover {
+  color: var(--nf-accent);
+}
+
+/* Barre de recherche */
+[class*="search_"],
+[class*="textInput_"],
+[class*="input_"] {
+  background: var(--nf-900) !important;
+  border-radius: var(--nf-radius-sm);
+  color: var(--nf-200);
+}
+
+[class*="search_"]:focus-within,
+[class*="input_"]:focus-within {
+  box-shadow: var(--nf-ring);
+}
+
+
+/* ============================================================
+7. LISTE DES SALONS / DM / MEMBRES
+============================================================ */
+/* conteneur */
+[class*="sidebarList_"][class*="sidebarListRounded_"] {
+  border-radius: var(--nf-radius-md) 0 0 0;
+}
+/* Fond de la colonne des canaux */
+[class*="container_"][class*="sidebar_"],
+[class*="chat_"] ~ [class*="sidebar_"] {
+  background: var(--nf-900);
+  border-right: var(--nf-border);
+}
+[class*="sidebar_"]{
+  width: 250px;
+}
+/* Têtes de catégorie : plus discrètes */
+[class*="header_"][class*="group_"],
+[class*="container_"][class*="category_"] {
+  color: var(--nf-400) !important;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* Salons */
+[class*="channel_"][class*="container_"],
+[class*="channel_"] > [class*="link_"],
+[class*="peopleListItem_"] {
+  border-radius: var(--nf-radius-md);
+  transition: all var(--nf-ease);
+}
+
+[class*="channel_"]:hover { background: var(--nf-gradient-soft); }
+
+/* Élément sélectionné : barre dégradée à gauche */
+[class*="channel_"][class*="selected_"] {
+  background: var(--nf-gradient-soft);
+  box-shadow: inset 3px 0 0 var(--nf-accent);
+  color: var(--nf-50);
+}
+
+/* Icônes de canal (hashtag, méga) */
+[class*="channel_"] [class*="icon_"] {
+  color: var(--nf-400);
+}
+[class*="channel_"][class*="selected_"] [class*="icon_"] {
+  color: var(--nf-accent);
+}
+[class*="channel_"]:hover [class*="icon_"] {
+  color: var(--nf-200);
+}
+
+/* Non lu : texte plus lumineux */
+[class*="channel_"][class*="unread_"] > [class*="link_"],
+[class*="channel_"][class*="unread_"] {
+  color: var(--nf-50);
+  font-weight: 600;
+}
+
+/* Badge de non-lus : violet */
+[class*="mention_"],
+[class*="unseenDividerCount_"] [class*="badge_"] {
+  background: var(--nf-accent) !important;
+  color: var(--nf-950) !important;
+  font-weight: 700;
+}
+
+/* Liste d'amis */
+[class*="peopleListItem_"] { padding: 10px; }
+[class*="peopleListItem_"]:hover { background: var(--nf-gradient-soft); }
+
+/* Liste des membres (à droite) */
+[class*="member_"] [class*="layout_"],
+[class*="memberRow_"] {
+  border-radius: var(--nf-radius-sm);
+  transition: background var(--nf-ease);
+  padding-top: 6px;
+  padding-bottom: 6px; 
+  
+}
+[class*="member_"]:hover [class*="layout_"],
+[class*="memberRow_"]:hover {
+  /* pas bon */
+  /*background: var(--nf-gradient-soft);*/
+}
+/* correction du précédent */
+[class*="clickable_"][class*="container_"]:hover {
+  background: var(--nf-gradient-soft);
+  border-radius: var(--nf-radius-sm);
+}
+
+[class*="member_"][class*="selected_"],
+[class*="memberRow_"][class*="selected_"] {
+  background: var(--nf-gradient-soft);
+  box-shadow: inset 3px 0 0 var(--nf-accent);
+  border-radius: var(--nf-radius-sm);
+}
+/* Liste des membres groupe : item */
+div[class*="member_"][class*="container_"][class*="clickable_"] {
+  border-radius: var(--nf-radius-sm);
+}
+
+/* Nom de membre : en ligne = clair, hors ligne = atténué */
+[class*="member_"] [class*="username_"],
+[class*="member_"] [class*="username_"] span {
+  color: var(--nf-200);
+}
+[class*="member_"][class*="offline_"] [class*="username_"] {
+  color: var(--nf-400);
+  opacity: .7;
+}
+
+/* Roles : bordure subtile */
+[class*="role_"] {
+  border: 1px solid rgb(255 255 255 / .15);
+}
+
+
+/* ============================================================
+8. FOND DU CHAT + MESSAGE DE BIENVENUE
+============================================================ */
+[class*="chat_"],
+[class*="sc-"] [class*="base_"][class*="thin_"] {
+  background: var(--nf-850);
+}
+
+/* Message "Bienvenue sur #canal" */
+[class*="newMessages_"],
+[class*="welcome_"] [class*="title_"] {
+  color: var(--nf-accent);
+}
+
+[class*="welcome_"] [class*="emoji_"] {
+  filter: drop-shadow(0 0 12px rgb(150 136 255 / .5));
+}
+
+
+/* ============================================================
+9. MESSAGES
+============================================================ */
+/* conteneur */
+[class*="chat_"] {
+  border-radius: 0 var(--nf-radius-md)  0 0;
+}
+/* Ligne de survol sur les messages */
+[class*="message_"]:hover {
+  background: rgb(255 255 255 / .03);
+}
+
+/* Message en cours d'édition par soi */
+[class*="message_"][class*="beingEdited_"] {
+  background: rgb(150 136 255 / .06);
+}
+
+/* Avatar */
+[class*="avatar_"],
+[class*="wrapper_"] img[class*="status_"] {
+  border-radius: 50%;
+}
+
+/* Nom de l'auteur + badge de boost */
+[class*="username_"] {
+  color: var(--nf-200) !important;
+  font-weight: 600;
+}
+
+[class*="mention_"][class*="username_"] {
+  color: var(--nf-accent) !important;
+}
+
+/* Horodatage */
+[class*="timestamp_"] {
+  color: var(--nf-400) !important;
+  opacity: .8;
+  font-size: 11px;
+}
+
+/* Blocage d'un message (barre violette à gauche) */
+[class*="message_"]:is([class*="mentioned_"], [class*="unread_"]) {
+  background-image: linear-gradient(90deg, rgb(150 136 255 / .10), transparent 30%) !important;
+}
+
+/* Bloc de texte */
+[class*="text_"] [class*="messageContent_"] {
+  word-break: break-word;
+}
+
+/* Liens dans le chat */
+[class*="messageContent_"] a {
+  color: var(--nf-accent);
+  text-decoration: none;
+  transition: text-decoration var(--nf-ease);
+}
+[class*="messageContent_"] a:hover {
+  text-decoration: underline;
+}
+
+/* Mentions dans le texte */
+[class*="mention_"][class*="pulsing_"],
+[class*="highlighted_"] {
+  /*background: rgb(150 136 255 / .22) !important;*/
+  background: rgb(150 136 255 / .10) !important;
+  color: var(--nf-accent-3) !important;
+  border-radius: var(--nf-radius-sm);
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Blocs de code */
+[class*="codeBlock_"],
+[class*="code_"],
+[class*="codeBlock_"] [class*="code_"] {
+  background: var(--nf-950) !important;
+  border: 1px solid rgb(255 255 255 / .08);
+  border-radius: var(--nf-radius-sm);
+}
+
+/* En-tête de code avec le language */
+[class*="codeBlock_"] [class*="header_"],
+[class*="codeBlock_"] [class*="copyButton_"] {
+  background: var(--nf-800) !important;
+  border-bottom: 1px solid rgb(255 255 255 / .08);
+  border-radius: var(--nf-radius-sm) var(--nf-radius-sm) 0 0;
+}
+
+/* Texte inline code */
+[class*="codeBlock_"] pre,
+[class*="inline_"] {
+  font-family: ui-monospace, "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 13px;
+}
+[class*="inline_"] {
+  background: var(--nf-950);
+  border: 1px solid rgb(255 255 255 / .08);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* Réactions */
+[class*="reaction_"] {
+  background: var(--nf-800);
+  border: 1px solid rgb(255 255 255 / .08);
+  border-radius: 8px;
+  transition: background var(--nf-ease), border-color var(--nf-ease), transform var(--nf-ease);
+}
+[class*="reaction_"]:hover {
+  background: var(--nf-700);
+  transform: translateY(-1px);
+}
+/* Réaction à laquelle j'ai participé */
+[class*="reaction_"][class*="popout_"][class*="me_"],
+[class*="reaction_"]:is([class*="reacted_"], [class*="me_"]) {
+  background: rgb(150 136 255 / .15);
+  border-color: rgb(150 136 255 / .5);
+}
+[class*="reaction_"] [class*="reactionCount_"],
+[class*="reaction_"] [class*="count_"] {
+  color: var(--nf-accent) !important;
+}
+
+/* Boutons d'action au survol (répondre, réagir, plus) */
+[class*="actions_"] [class*="button_"] {
+  background: var(--nf-800);
+  border: var(--nf-border);
+  border-radius: var(--nf-radius-sm);
+  color: var(--nf-200);
+  transition: background var(--nf-ease), color var(--nf-ease);
+}
+[class*="actions_"] [class*="button_"]:hover {
+  background: var(--nf-700);
+  color: var(--nf-50);
+}
+
+/* Réponses filées : trait violet */
+[class*="reply_"] [class*="wrapper_"]::before {
+  background: rgb(255 255 255 / .1);
+}
+[class*="reply_"][class*="mentioned_"] [class*="wrapper_"]::before,
+[class*="reply_"][class*="hover_"] [class*="wrapper_"]::before {
+  background: var(--nf-accent);
+}
+
+/* Séparateur de date */
+[class*="dateSpans_"],
+[class*="divider_"] [class*="label_"] {
+  color: var(--nf-400);
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+
+/* Embeds */
+[class*="wrapper_"] [class*="embed_"] {
+  background: var(--nf-900);
+  border: var(--nf-border);
+  border-radius: var(--nf-radius-md);
+}
+[class*="embed_"] [class*="avatar_"] {
+  border-radius: var(--nf-radius-sm);
+}
+
+/* Images */
+[class*="attachment_"] img,
+[class*="message_"] [class*="image_"] {
+  border-radius: var(--nf-radius-md);
+}
+
+/* Typing (3 points animés) */
+[class*="typing_"] [class*="typingUsers_"] {
+  color: var(--nf-400);
+  font-size: 12px;
+}
+
+
+/* formulaire de saisie */
+[class*="channelTextArea_"] {
+  border-radius: var(--nf-radius-lg);
+}
+[class*="channelTextArea_"]:hover {
+  transform: translateY(-1px);
+}
+[class*="channelTextArea_"]:focus-within {
+  border-color: rgb(150 136 255 / .6);
+}
+
+[class*="channelTextArea_"] [class*="scrollableContainer"][class*="themedBackground_"] {
+  background: none !important;
+}
+
+
+/* ============================================================
+10. SAISIE DE MESSAGE
+============================================================ */
+[class*="chat_"] [class*="wrapper_"][class*="thin_"] [class*="inner_"],
+[class*="cozy_"] [class*="chat_"] [class*="sc-"] {
+  background: var(--nf-900);
+}
+
+/* Boîte de saisie */
+[class*="container_"][class*="input_"],
+[class*="inner_"][class*="chat_"] {
+  background: var(--nf-800) !important;
+  border: 1px solid rgb(255 255 255 / .08);
+  border-radius: var(--nf-radius-lg);
+  transition: border-color var(--nf-ease), box-shadow var(--nf-ease);
+}
+[class*="container_"][class*="input_"]:focus-within,
+[class*="inner_"][class*="chat_"]:focus-within {
+  border-color: rgb(150 136 255 / .6);
+  box-shadow: 0 0 0 3px rgb(150 136 255 / .15);
+}
+
+/* Placeholder */
+[class*="container_"][class*="input_"] [placeholder]:empty::before,
+[class*="input_"] [placeholder] {
+  color: var(--nf-400);
+}
+
+/* Boutons à l'intérieur de la saisie (plus, emoji, gif, sticker) */
+[class*="container_"][class*="input_"] [class*="button_"],
+[class*="input_"] [class*="attachButton_"] {
+  color: var(--nf-400);
+  transition: color var(--nf-ease), background var(--nf-ease), transform var(--nf-ease);
+  border-radius: var(--nf-radius-sm);
+}
+[class*="input_"] [class*="button_"]:hover,
+[class*="attachButton_"]:hover {
+  color: var(--nf-accent);
+  background: rgb(255 255 255 / .05);
+  transform: scale(1.1);
+}
+
+/* Zone d'upload de fichier */
+[class*="file_"][class*="dropArea_"],
+[class*="dragging_"] {
+  background: rgb(150 136 255 / .08) !important;
+  border-color: var(--nf-accent) !important;
+}
+
+/* Preview de pièce jointe */
+[class*="fileUpload_"],
+[class*="attachment_"] [class*="body_"],
+[class*="wrapper_"] [class*="file_"] {
+  background: var(--nf-900);
+  border: var(--nf-border);
+  border-radius: var(--nf-radius-md);
+}
+
+/* Bouton Envoyer (déjà peint via --control-primary-background-*, on renforce) */
+[class*="button_"][class*="primary_"],
+[class*="primary_"][class*="button_"] {
+  background: var(--nf-accent-2) !important;
+  color: #fff !important;
+  border: none;
+  border-radius: var(--nf-radius-sm);
+  transition: background var(--nf-ease), transform var(--nf-ease), box-shadow var(--nf-ease);
+}
+[class*="button_"][class*="primary_"]:hover,
+[class*="primary_"][class*="button_"]:hover {
+  background: var(--nf-accent) !important;
+  box-shadow: 0 4px 16px -4px rgb(150 136 255 / .6);
+  transform: translateY(-1px);
+}
+[class*="button_"][class*="primary_"]:active {
+  transform: translateY(0);
+}
+
+
+/* ============================================================
+11. POPOUTS / MENUS / MODALES
+============================================================ */
+/* Tous les menus flottants */
+[class*="layer_"],
+[class*="popout_"],
+[class*="menu_"],
+[class*="bottomSection_"],
+[class*="modal_"],
+[class*="toast_"] {
+  background: var(--nf-800) !important;
+  border: var(--nf-border) !important;
+  border-radius: var(--nf-radius-lg) !important;
+  box-shadow: var(--nf-shadow) !important;
+  overflow: hidden;
+}
+
+/* arrière plan lors d'une fenêtre popout */
+.layer_bc663c {
+  background: rgb(11 11 16 / .2) !important;
+  backdrop-filter: blur(10px);
+}
+[class*="lightbox_"],
+[class*="scrim_"] {
+  background: none !important;
+}
+
+/* Fond flouté des popouts */
+[class*="layer_"]::before,
+[class*="popout_"]::before {
+  content: none;
+}
+
+/* Items de menu */
+[class*="menu_"] [class*="item_"],
+[class*="menu_"] [class*="itemGroup_"] > [class*="item_"] {
+  border-radius: var(--nf-radius-sm);
+  color: var(--nf-200);
+  transition: background var(--nf-ease), color var(--nf-ease);
+}
+[class*="menu_"] [class*="item_"]:hover,
+[class*="menu_"] [class*="item_"]:focus {
+  background: rgb(150 136 255 / .14) !important;
+  color: var(--nf-50);
+}
+/* Item actif / sélectionné */
+[class*="menu_"] [class*="item_"][aria-selected="true"],
+[class*="menu_"] [class*="selected_"][class*="item_"] {
+  background: rgb(150 136 255 / .18) !important;
+}
+/* Item dangereux (Supprimer / Kicker) */
+[class*="menu_"] [class*="danger_"],
+[class*="menu_"] [class*="red_"],
+[class*="menu_"] [class*="item_"][class*="danger_"]:hover {
+  color: var(--nf-dnd) !important;
+  background: rgb(248 113 113 / .12) !important;
+}
+
+/* Sous-menu de rôle dans les popouts */
+[class*="menu_"] [class*="role_"],
+[class*="menu_"] [class*="roles_"] {
+  color: var(--nf-400);
+}
+
+/* Popout d'emoji */
+[class*="emojiPicker_"],
+[class*="picker_"] {
+  background: var(--nf-800) !important;
+  border-radius: var(--nf-radius-lg) !important;
+  border: var(--nf-border);
+  box-shadow: var(--nf-shadow);
+}
+
+/* Onglets du sélecteur d'emoji */
+[class*="emojiPicker_"] [class*="item_"]:hover {
+  background: rgb(150 136 255 / .12);
+  border-radius: var(--nf-radius-sm);
+}
+[class*="emojiPicker_"] [class*="item_"]:is([class*="selected_"], [aria-selected="true"]) {
+  background: rgb(150 136 255 / .2);
+}
+
+/* Boutons des menus (Désactiver, etc.) */
+[class*="menu_"] button[class*="button_"],
+[class*="menu_"] [class*="button_"] {
+  background: var(--nf-700);
+  border-radius: var(--nf-radius-sm);
+  color: var(--nf-200);
+  transition: background var(--nf-ease);
+}
+[class*="menu_"] [class*="button_"]:hover {
+  background: var(--nf-600);
+  color: var(--nf-50);
+}
+
+/* Tooltips */
+[class*="tooltips_"],
+[class*="tooltip_"] {
+  background: var(--nf-950) !important;
+  border: var(--nf-border) !important;
+  border-radius: var(--nf-radius-sm) !important;
+  color: var(--nf-200);
+  font-weight: 500;
+}
+[class*="tooltip_"] span {
+  background: transparent !important;
+  color: inherit;
+}
+
+/* Toaster (notifications en haut à droite) */
+[class*="toast_"] {
+  background: var(--nf-800) !important;
+  border: var(--nf-border);
+  border-left: 3px solid var(--nf-accent);
+  border-radius: var(--nf-radius-md) !important;
+  box-shadow: var(--nf-shadow);
+}
+
+/* Modales (réglages, profil, invite…) */
+[class*="modal_"],
+[class*="wrapper_"][class*="modal_"],
+[class*="footer_"][class*="modal_"] {
+  background: var(--nf-850) !important;
+  border: var(--nf-border);
+  border-radius: var(--nf-radius-xl) !important;
+  box-shadow: var(--nf-shadow);
+}
+[class*="modal_"] [class*="header_"] {
+  border-bottom: var(--nf-border);
+}
+[class*="modal_"] [class*="footer_"] {
+  border-top: var(--nf-border);
+}
+
+/* Overlay derrière les modales */
+[class*="backdrop_"],
+[class*="layer_"][class*="backdrop_"] {
+  background: rgb(11 11 16 / .7) !important;
+  backdrop-filter: blur(4px);
+}
+
+
+/* ============================================================
+12. CONTRÔLES (switches, sliders, checkboxes)
+============================================================ */
+/* Toggle / switch ON : violet */
+[class*="toggle_"]:is([class*="on_"], [aria-checked="true"]) [class*="switch_"],
+[class*="on_"] [class*="switch_"] {
+  background: var(--nf-accent) !important;
+}
+
+/* Track du switch */
+[class*="switch_"] {
+  transition: background var(--nf-ease);
+}
+[class*="knob_"] {
+  transition: transform var(--nf-ease);
+}
+
+/* Slider */
+[class*="range_"] [class*="grabber_"],
+[class*="range_"] [class*="slider_"] [class*="thumb_"] {
+  background: var(--nf-accent) !important;
+  box-shadow: 0 0 8px rgb(150 136 255 / .5);
+  border: none !important;
+}
+[class*="range_"] [class*="track_"] {
+  background: var(--nf-700) !important;
+}
+[class*="range_"] [class*="progress_"],
+[class*="range_"] [class*="filled_"] {
+  background: var(--nf-gradient) !important;
+}
+
+/* Radio */
+[class*="radio_"][class*="selected_"] [class*="dot_"],
+[class*="radio_"][class*="selected_"]::after {
+  background: var(--nf-accent) !important;
+}
+
+/* Checkbox */
+[class*="checkbox_"][class*="checked_"] {
+  background: var(--nf-accent) !important;
+  border-color: var(--nf-accent) !important;
+}
+
+/* Select (dropdowns) */
+[class*="select_"] {
+  background: var(--nf-800);
+  border: var(--nf-border);
+  border-radius: var(--nf-radius-sm);
+  transition: border-color var(--nf-ease), box-shadow var(--nf-ease);
+}
+[class*="select_"]:focus,
+[class*="select_"]:focus-within {
+  border-color: rgb(150 136 255 / .6);
+  box-shadow: var(--nf-ring);
+}
+[class*="select_"] [class*="option_"]:hover,
+[class*="option_"]:hover {
+  background: rgb(150 136 255 / .14);
+  border-radius: var(--nf-radius-sm);
+}
+[class*="option_"]:is([class*="selected_"], [aria-selected="true"]) {
+  background: rgb(150 136 255 / .2);
+  color: var(--nf-accent);
+}
+
+/* Boutons secondaires / ghost */
+[class*="button_"]:not([class*="primary_"]):not([class*="danger_"]) {
+  border-radius: var(--nf-radius-sm);
+  transition: background var(--nf-ease), color var(--nf-ease), border-color var(--nf-ease);
+}
+[class*="button_"][class*="ghost_"],
+[class*="button_"]:not([class*="primary_"]):not([class*="danger_"]):hover {
+  background: rgb(150 136 255 / .12);
+  border-color: rgb(150 136 255 / .3);
+  color: var(--nf-200);
+}
+
+/* Boutons danger */
+[class*="button_"][class*="danger_"],
+[class*="button_"][class*="red_"],
+[class*="danger_"] {
+  color: var(--nf-dnd) !important;
+}
+[class*="button_"][class*="danger_"]:hover,
+[class*="button_"][class*="red_"]:hover {
+  background: rgb(248 113 113 / .15) !important;
+  border-color: rgb(248 113 113 / .4);
+}
+
+
+/* ============================================================
+13. PANEL UTILISATEUR (en bas à gauche)
+============================================================ */
+section[class*="panels_"] {
+  border-radius: var(--nf-radius-md);
+  overflow: hidden;
+}
+
+[class*="userPlus_"],
+[class*="userPanel_"],
+[class*="container_"][class*="user_"][class*="bottom_"] {
+  background: var(--nf-900);
+  border-top: var(--nf-border);
+}
+
+[class*="userPlus_"] [class*="button_"],
+[class*="userPlus_"] [class*="btn_"] {
+  color: var(--nf-400);
+  transition: color var(--nf-ease), background var(--nf-ease);
+  border-radius: var(--nf-radius-sm);
+}
+[class*="userPlus_"] [class*="button_"]:hover,
+[class*="userPlus_"] [class*="btn_"]:hover {
+  color: var(--nf-50);
+  background: rgb(255 255 255 / .06);
+}
+
+/* Nom + tag */
+[class*="userPanel_"] [class*="name_"],
+[class*="userPanel_"] [class*="username_"] {
+  color: var(--nf-50);
+  font-weight: 600;
+}
+[class*="userPanel_"] [class*="discriminator_"],
+[class*="userPanel_"] [class*="status_"] {
+  color: var(--nf-400);
+}
+
+/* Boutons "me" au survol du user panel */
+[class*="userPanel_"]:hover [class*="status_"],
+[class*="userPanel_"] [class*="status_"] {
+  transition: filter var(--nf-ease);
+}
+
+
+/* ============================================================
+14. STATUTS (pastilles)
+============================================================ */
+[class*="status_"] svg,
+[class*="status_"] span[class*="status_"] {
+  filter: none !important;
+}
+
+/* Couleurs des statuts via des pastilles custom */
+[class*="status_"]:is([class*="online_"], [aria-label*="En ligne"]) {
+  color: var(--nf-online) !important;
+}
+[class*="status_"]:is([class*="idle_"], [aria-label*="Inactif"]) {
+  color: var(--nf-idle) !important;
+}
+[class*="status_"]:is([class*="dnd_"], [aria-label*="Occupé"], [aria-label*="Ne pas"]) {
+  color: var(--nf-dnd) !important;
+}
+[class*="status_"]:is([class*="offline_"], [class*="invisible_"], [aria-label*="Hors ligne"]) {
+  color: #5c5c6e !important;
+}
+
+/* Pastille autour de l'avatar dans les listes (amis/membres) */
+[class*="peopleListItem_"] [class*="status_"],
+[class*="member_"] [class*="status_"] {
+  border-color: var(--nf-900) !important;
+}
+
+
+/* ============================================================
+15. SCROLLBARS
+============================================================ */
+/* Style WebKit (Discord = Chromium) */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  /*background: var(--nf-700);*/
+  background: linear-gradient(180deg, rgba(150,136,255,.95), rgba(50,89,225,.78));
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background var(--nf-ease);
+}
+*::-webkit-scrollbar-thumb:hover {
+  /*background: rgb(150 136 255 / .6);*/
+  background: linear-gradient(180deg, rgb(156, 143, 255), rgb(73, 113, 255));
+  border: 2px solid transparent;
+  background-clip: content-box;
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb:active {
+  background: var(--nf-accent);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Scrollbar fine dans les popouts */
+[class*="menu_"] ::-webkit-scrollbar,
+[class*="emojiPicker_"] ::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+/* ============================================================
+16. BADGES, TAGS & PETITS DÉTAILS
+============================================================ */
+/* Badge Boost / Nitro */
+[class*="badge_"] svg[class*="icon_"] {
+  color: var(--nf-accent);
+}
+
+/* Icônes génériques */
+[class*="icon_"] svg {
+  color: var(--nf-400);
+}
+
+/* "Épinglé" / spoilers / liens ouverts */
+[class*="spoiler_"] {
+  background: var(--nf-600);
+  color: transparent;
+  border-radius: 4px;
+}
+[class*="spoiler_"]:hover {
+  background: rgb(150 136 255 / .25);
+}
+
+/* Indicateur de "voir plus de messages" */
+[class*="newMessages_"] [class*="jump_"],
+[class*="jumpLink_"] {
+  background: var(--nf-accent-2);
+  color: #fff;
+  border-radius: var(--nf-radius-xl);
+  font-weight: 600;
+  transition: background var(--nf-ease), box-shadow var(--nf-ease);
+}
+[class*="jumpLink_"]:hover,
+[class*="jump_"]:hover {
+  background: var(--nf-accent);
+  box-shadow: 0 4px 14px -4px rgb(150 136 255 / .7);
+}
+
+/* Curseur de redimensionnement du panneau membres */
+[class*="resizer_"],
+[class*="sizer_"] {
+  background: transparent;
+}
+[class*="resizer_"]:hover {
+  background: rgb(150 136 255 / .2);
+}
+
+/* ============================================================
+17. ANIMATIONS & MICRO-INTERACTIONS
+============================================================ */
+@keyframes nf-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* Point "en ligne" qui respire doucement */
+[class*="status_"][class*="online_"] {
+  animation: nf-pulse 3s ease-in-out infinite;
+}
+
+/* Bouton de connexion / actions flottantes */
+[class*="button_"][class*="action_"]:hover {
+  transform: translateY(-1px);
+  transition: transform var(--nf-ease);
+}
+
+/* Avatars dans les listes : léger zoom au survol */
+[class*="peopleListItem_"] [class*="avatar_"],
+[class*="member_"] [class*="avatar_"] {
+  transition: transform var(--nf-ease);
+}
+[class*="peopleListItem_"]:hover [class*="avatar_"],
+[class*="member_"]:hover [class*="avatar_"] {
+  transform: scale(1.08);
+}
+
+/* ============================================================
+18. ACCESSIBILITÉ : MODE RÉDUIT DES ANIMATIONS
+============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
