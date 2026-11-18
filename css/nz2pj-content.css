@@ -6,17 +6,17 @@
 [class*="tutorialContainer_"] {
   margin-top: 10px;
 }
-.childWrapper__6e9f8 {
+.childWrapper_JJ-hgR {
     background-image: url('https://maxxou21.github.io/NZ2PJ-DiscordTheme/assets/logo-black.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
-.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8 {
+.wrapper_JJ-hgR.selected_JJ-hgR .childWrapper_JJ-hgR {
     background-color: unset;
 }
 /* don't show the default Discord logo */
-.childWrapper__6e9f8 svg {
+.childWrapper_JJ-hgR svg {
     display: none;
 }
 /* PM items */
@@ -627,7 +627,7 @@ div[class*="member_"][class*="container_"][class*="clickable_"] {
 }
 
 /* arrière plan lors d'une fenêtre popout */
-.layer_bc663c {
+.layer_C_WHpX {
   background: rgb(11 11 16 / .2) !important;
   backdrop-filter: blur(10px);
 }
