@@ -623,7 +623,7 @@ div[class*="member_"][class*="container_"][class*="clickable_"] {
   border: var(--nf-border) !important;
   border-radius: var(--nf-radius-lg) !important;
   box-shadow: var(--nf-shadow) !important;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 /* arrière plan lors d'une fenêtre popout */
